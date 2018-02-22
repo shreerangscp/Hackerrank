@@ -1,5 +1,5 @@
-Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
-Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective average city populations (CITY.Population) rounded down to the nearest integer.
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns. Do not include continents without cities in your output.
 Input Format
 The CITY and COUNTRY tables are described as follows:
 
@@ -32,7 +32,8 @@ Code2             Varchar2(2)
 
 Query :-
 
-select sum(c.population)
-from city c, country cr
-where cr.continent='Asia'
-and c.countrycode = cr.code;      
+select Country.Continent, FLOOR(AVG(City.Population))
+from country
+inner join city
+    on Country.Code = City.CountryCode
+group by Country.Continent;
