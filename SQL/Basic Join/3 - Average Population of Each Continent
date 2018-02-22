@@ -35,5 +35,5 @@ Query :-
 select Country.Continent, FLOOR(AVG(City.Population))
 from country
 inner join city
-    on Country.Code = City.CountryCode
+on Country.Code = City.CountryCode
 group by Country.Continent;
