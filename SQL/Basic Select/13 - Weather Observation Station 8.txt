@@ -1,0 +1,68 @@
+Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates.
+
+Input Format
+
+The STATION table is described as follows:
+
+STATION
+	
+Field             Type
+ID                Number
+City              Varchar2(21)
+State	          Varchar2(3)
+LAT_N	          Number
+LONG_W   	      Number
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+Query
+
+select distinct(city) from station where city like 'A%' and city like '%a'
+union all
+select distinct(city) from station where city like 'A%' and city like '%e'
+union all
+select distinct(city) from station where city like 'A%' and city like '%i'
+union all
+select distinct(city) from station where city like 'A%' and city like '%o'
+union all
+select distinct(city) from station where city like 'A%' and city like '%u'
+union all
+select distinct(city) from station where city like 'E%' and city like '%a'
+union all
+select distinct(city) from station where city like 'E%' and city like '%e'
+union all
+select distinct(city) from station where city like 'E%' and city like '%i'
+union all
+select distinct(city) from station where city like 'E%' and city like '%o'
+union all
+select distinct(city) from station where city like 'E%' and city like '%u'
+union all
+select distinct(city) from station where city like 'I%' and city like '%a'
+union all
+select distinct(city) from station where city like 'I%' and city like '%e'
+union all
+select distinct(city) from station where city like 'I%' and city like '%i'
+union all
+select distinct(city) from station where city like 'I%' and city like '%o'
+union all
+select distinct(city) from station where city like 'I%' and city like '%u'
+union all
+select distinct(city) from station where city like 'O%' and city like '%a'
+union all
+select distinct(city) from station where city like 'O%' and city like '%e'
+union all
+select distinct(city) from station where city like 'O%' and city like '%i'
+union all
+select distinct(city) from station where city like 'O%' and city like '%o'
+union all
+select distinct(city) from station where city like 'O%' and city like '%u'
+union all
+select distinct(city) from station where city like 'U%' and city like '%a'
+union all
+select distinct(city) from station where city like 'U%' and city like '%e'
+union all
+select distinct(city) from station where city like 'U%' and city like '%i'
+union all
+select distinct(city) from station where city like 'U%' and city like '%o'
+union all
+select distinct(city) from station where city like 'U%' and city like '%u';

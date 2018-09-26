@@ -1,0 +1,17 @@
+Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE for Japan is JPN.
+
+Input Format
+
+The CITY table is described as follows:
+
+  CITY
+Field             Type
+ID                Number
+Name              Varchar2(17)
+CountryCode       Varchar2(3)
+District          Varchar2(20)
+Population        Number
+
+Query :-
+select * from city where countrycode='JPN';
+

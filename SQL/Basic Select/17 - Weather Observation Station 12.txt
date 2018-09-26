@@ -1,0 +1,20 @@
+Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+Input Format
+
+The STATION table is described as follows:
+
+STATION
+	
+Field             Type
+ID                Number
+City              Varchar2(21)
+State	          Varchar2(3)
+LAT_N	          Number
+LONG_W   	      Number
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+Query
+
+select distinct city from station where regexp_like(city, '^[^aeiouAEIOU].*[^aeiouAEIOU]$');
