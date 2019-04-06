@@ -1,0 +1,1 @@
+select sum(c.population) from city c, country co where co.code = c.countrycode and co.continent = 'Asia';
